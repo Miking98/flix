@@ -63,6 +63,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //Set up table view
         photoMainTableView.delegate = self
         photoMainTableView.dataSource = self
+        
+        // Initialize a UIRefreshControl
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlAction), for: UIControlEvents.valueChanged)
+        photoMainTableView.insertSubview(refreshControl, at: 0)
+    }
+    
+    func refreshControlAction(_ refreshControl: UIRefreshControl) {
+        let url = URL(string: generateURL(apiURL: nowPlayingURL, page: 1))!
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        session.configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+        let task: URLSessionDataTask = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let data = data, let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                self.movies = dataDictionary["results"] as! [[String: Any]]
+                self.totalMovies = dataDictionary["total_results"] as! Int
+            }
+            self.photoMainTableView.reloadData()
+            refreshControl.endRefreshing()
+        }
+        task.resume()
     }
     
     func generateURL(apiURL: String, page: Int? = nil) -> String {
