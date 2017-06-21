@@ -11,6 +11,7 @@ import AlamofireImage
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var spinnerActivityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var photoMainTableView: UITableView!
     
     // Info on returned movies
@@ -29,6 +30,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        spinnerActivityIndicatorView.startAnimating()
         
         // Set up The Movie DB config information
         let url = URL(string: generateURL(apiURL: configURL))!
@@ -53,6 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         self.totalMovies = dataDictionary["total_results"] as! Int
                     }
                     self.photoMainTableView.reloadData()
+                    self.spinnerActivityIndicatorView.stopAnimating()
                 }
                 task.resume()
             }
