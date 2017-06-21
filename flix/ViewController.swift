@@ -38,6 +38,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         session.configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
         let task = session.dataTask(with: url) { (data, response, error) in
             if let error = error {
+                self.alertNetworkError()
                 print(error.localizedDescription)
             } else if let data = data, let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                 let images = dataDictionary["images"] as! [String: Any]
@@ -49,6 +50,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 session.configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
                 let task = session.dataTask(with: url) { (data, response, error) in
                     if let error = error {
+                        self.alertNetworkError()
                         print(error.localizedDescription)
                     } else if let data = data, let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                         self.movies = dataDictionary["results"] as! [[String: Any]]
@@ -71,6 +73,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlAction), for: UIControlEvents.valueChanged)
         photoMainTableView.insertSubview(refreshControl, at: 0)
+    }
+    
+    func alertNetworkError() {
+        let alertController = UIAlertController(title: "Network Error", message: "Error fetching data from The Movie Database. Please check your network connection.", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            // Reload page
+            self.viewDidLoad()
+        }
+        alertController.addAction(OKAction)
+        
+        present(alertController, animated: true){}
     }
     
     func refreshControlAction(_ refreshControl: UIRefreshControl) {
