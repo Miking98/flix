@@ -25,8 +25,8 @@ class detailViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     var movie: [String: Any]?
     var baseImageURL = ""
@@ -37,7 +37,7 @@ class detailViewController: UIViewController {
         if let movie = movie {
             titleLabel.text = movie[MovieKeys.title] as? String
             dateLabel.text = movie[MovieKeys.date] as? String
-            descriptionLabel.text = movie[MovieKeys.description] as? String
+            descriptionTextView.text = movie[MovieKeys.description] as? String
             ratingLabel.text = String(format: "%.1f", movie[MovieKeys.rating] as! Double)
             let backdropPath = movie[MovieKeys.backdropPath] as? String
             let posterPath = movie[MovieKeys.posterPath] as? String

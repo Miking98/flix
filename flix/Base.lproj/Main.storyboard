@@ -114,17 +114,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fL4-GV-xB6">
-                                        <rect key="frame" x="8" y="119" width="327" height="142"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJh-Uj-2Wl">
-                                        <rect key="frame" x="0.0" y="-68" width="142" height="202"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Released:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w40-wf-idS">
                                         <rect key="frame" x="150" y="35" width="72" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -153,6 +142,18 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJh-Uj-2Wl">
+                                        <rect key="frame" x="0.0" y="-91" width="142" height="202"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Kr-32-dB9">
+                                        <rect key="frame" x="0.0" y="110" width="343" height="117"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <color key="textColor" red="0.98247843290000003" green="1" blue="0.99627804259999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="0.87461487676056338" colorSpace="calibratedWhite"/>
                             </view>
@@ -161,7 +162,7 @@
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="Y27-wv-tOE" id="K8j-He-ceM"/>
-                        <outlet property="descriptionLabel" destination="fL4-GV-xB6" id="8Bn-qj-lRg"/>
+                        <outlet property="descriptionTextView" destination="6Kr-32-dB9" id="ZwU-on-vE8"/>
                         <outlet property="ratingLabel" destination="Cgc-q4-ABj" id="DHg-t8-Rum"/>
                         <outlet property="splashImageView" destination="3MP-8h-MWE" id="rZg-Jd-HBb"/>
                         <outlet property="thumbnailImageView" destination="gJh-Uj-2Wl" id="U6T-06-q1g"/>
@@ -189,21 +190,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b8S-rk-5kc">
-                                    <size key="itemSize" width="180" height="159"/>
+                                    <size key="itemSize" width="182" height="293"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SuperheroCell" id="gly-kK-ssq" customClass="SuperheroCell" customModule="flix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="159"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="293"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="159"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="293"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h7e-ys-m9Q">
-                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="159"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="293"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -211,6 +212,7 @@
                                         <color key="backgroundColor" red="0.0085217306239999992" green="0.0087030440410000003" blue="0.0087030440410000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="superheroImageView" destination="h7e-ys-m9Q" id="wIY-Mn-9qW"/>
+                                            <segue destination="9XZ-Ys-4FW" kind="show" id="3Cz-j2-JWK"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -294,4 +296,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3Cz-j2-JWK"/>
+    </inferredMetricsTieBreakers>
 </document>
