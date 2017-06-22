@@ -32,6 +32,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         spinnerActivityIndicatorView.startAnimating()
         
+        //Set up table view
+        photoMainTableView.delegate = self
+        photoMainTableView.dataSource = self
+        
         // Set up The Movie DB config information
         let url = URL(string: generateURL(apiURL: configURL))!
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
@@ -61,13 +65,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
                 task.resume()
             }
-            self.photoMainTableView.reloadData()
         }
         task.resume()
-        
-        //Set up table view
-        photoMainTableView.delegate = self
-        photoMainTableView.dataSource = self
         
         // Initialize a UIRefreshControl
         let refreshControl = UIRefreshControl()

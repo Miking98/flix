@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Movies-->
+        <!--Now Playing-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="flix" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,7 +70,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Movies" id="WvQ-JK-bZT"/>
+                    <navigationItem key="navigationItem" title="Now Playing" id="WvQ-JK-bZT"/>
                     <connections>
                         <outlet property="photoMainTableView" destination="Swk-g0-Fh3" id="Wf4-P2-PyV"/>
                         <outlet property="spinnerActivityIndicatorView" destination="YqK-Vt-wjz" id="dSo-Xy-XVf"/>
@@ -172,7 +172,7 @@
             </objects>
             <point key="canvasLocation" x="2821.5999999999999" y="791.15442278860576"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Action-->
         <scene sceneID="XW9-qW-Yuo">
             <objects>
                 <viewController id="s2o-73-x0q" customClass="collectionViewController" customModule="flix" customModuleProvider="target" sceneMemberID="viewController">
@@ -183,9 +183,51 @@
                     <view key="view" contentMode="scaleToFill" id="Vwt-Kb-h18">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GPv-7I-4m9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b8S-rk-5kc">
+                                    <size key="itemSize" width="180" height="159"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SuperheroCell" id="gly-kK-ssq" customClass="SuperheroCell" customModule="flix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="159"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="159"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h7e-ys-m9Q">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="159"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.0085217306239999992" green="0.0087030440410000003" blue="0.0087030440410000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="superheroImageView" destination="h7e-ys-m9Q" id="wIY-Mn-9qW"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8A5-2q-Z77">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ICo-kT-jXg"/>
+                    <navigationItem key="navigationItem" title="Action" id="ICo-kT-jXg"/>
+                    <connections>
+                        <outlet property="spinnerActivityIndicatorView" destination="8A5-2q-Z77" id="UOz-Sx-SMo"/>
+                        <outlet property="superheroCollectionView" destination="GPv-7I-4m9" id="UhB-il-QqY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLL-wT-lGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -228,11 +270,11 @@
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="791.15442278860576"/>
         </scene>
-        <!--Superhero-->
+        <!--Action-->
         <scene sceneID="ehJ-Db-PpH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cMN-Y5-2Od" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Superhero" image="superhero_tabbar_item" id="Mgg-1A-sjH"/>
+                    <tabBarItem key="tabBarItem" title="Action" image="superhero_tabbar_item" id="Mgg-1A-sjH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tr5-Xj-MTH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
