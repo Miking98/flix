@@ -103,6 +103,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         task.resume()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = photoMainTableView.indexPath(for: cell) {
+            let movie = movies[indexPath.row]
+            let dvc = segue.destination as! detailViewController
+            dvc.movie = movie
+            dvc.baseImageURL = baseImageURL
+        }
+    }
+    
     func generateURL(apiURL: String, page: Int? = nil) -> String {
         var url = apiURL + "?api_key=" + API_KEY
         if page != nil {
