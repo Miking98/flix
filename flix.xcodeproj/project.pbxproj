@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3BF6468719C9FE42E09115F7 /* Pods_flix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49714AE05C1DE27383CD638 /* Pods_flix.framework */; };
 		927B4C891EFB388F0064D074 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927B4C881EFB388F0064D074 /* detailViewController.swift */; };
+		927B4C8E1EFB4D630064D074 /* collectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927B4C8D1EFB4D630064D074 /* collectionViewController.swift */; };
 		92EE6EFB1EFB0FF5003B7222 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EE6EFA1EFB0FF5003B7222 /* AppDelegate.swift */; };
 		92EE6EFD1EFB0FF5003B7222 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EE6EFC1EFB0FF5003B7222 /* ViewController.swift */; };
 		92EE6F001EFB0FF5003B7222 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92EE6EFE1EFB0FF5003B7222 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		4B4C21D104A5AB2685EF5F3A /* Pods-flix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flix/Pods-flix.debug.xcconfig"; sourceTree = "<group>"; };
 		78B50CBA1FBE002E618F13C7 /* Pods-flixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flixUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flixUITests/Pods-flixUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		927B4C881EFB388F0064D074 /* detailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
+		927B4C8D1EFB4D630064D074 /* collectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collectionViewController.swift; sourceTree = "<group>"; };
 		92EE6EF71EFB0FF5003B7222 /* flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92EE6EFA1EFB0FF5003B7222 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92EE6EFC1EFB0FF5003B7222 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				92EE6EFC1EFB0FF5003B7222 /* ViewController.swift */,
 				927B4C881EFB388F0064D074 /* detailViewController.swift */,
+				927B4C8D1EFB4D630064D074 /* collectionViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92EE6EFD1EFB0FF5003B7222 /* ViewController.swift in Sources */,
+				927B4C8E1EFB4D630064D074 /* collectionViewController.swift in Sources */,
 				92EE6EFB1EFB0FF5003B7222 /* AppDelegate.swift in Sources */,
 				92EE6F291EFB156F003B7222 /* photoMainTableViewCell.swift in Sources */,
 				927B4C891EFB388F0064D074 /* detailViewController.swift in Sources */,
