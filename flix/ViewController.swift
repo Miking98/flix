@@ -9,13 +9,15 @@
 import UIKit
 import AlamofireImage
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var spinnerActivityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var photoMainTableView: UITableView!
+    @IBOutlet weak var photoMainSearchBar: UISearchBar!
     
     // Info on returned movies
     var movies: [[String: Any]] = []
+    var filteredMovies: [[String: Any]] = []
     var totalMovies = 0
     // The Movie Database URL's
     let API_KEY = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
@@ -32,7 +34,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         spinnerActivityIndicatorView.startAnimating()
         
-        //Set up table view
+        // Set up search bar
+        photoMainSearchBar.delegate = self
+        
+        // Set up table view
         photoMainTableView.delegate = self
         photoMainTableView.dataSource = self
         
@@ -58,6 +63,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         print(error.localizedDescription)
                     } else if let data = data, let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                         self.movies = dataDictionary["results"] as! [[String: Any]]
+                        self.filteredMovies = self.movies
                         self.totalMovies = dataDictionary["total_results"] as! Int
                     }
                     self.photoMainTableView.reloadData()
@@ -105,7 +111,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell
         if let indexPath = photoMainTableView.indexPath(for: cell) {
-            let movie = movies[indexPath.row]
+            let movie = filteredMovies[indexPath.row]
             let dvc = segue.destination as! detailViewController
             dvc.movie = movie
             dvc.baseImageURL = baseImageURL
@@ -121,12 +127,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return filteredMovies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = photoMainTableView.dequeueReusableCell(withIdentifier: "photoMain") as! photoMainTableViewCell
-        let movie = movies[indexPath.row]
+        let movie = filteredMovies[indexPath.row]
         
         let title = movie["title"] as! String
         let description = movie["overview"] as! String
@@ -142,7 +148,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // When there is no text, filteredData is the same as the original data
+        // When user has entered text into the search box
+        // Use the filter method to iterate over all items in the data array
+        // For each item, return true if the item should be included and false if the
+        // item should NOT be included
+        filteredMovies = searchText.isEmpty ? movies : movies.filter { (item: [String: Any]) -> Bool in
+            // If dataItem matches the searchText, return true to include it
+            return (item["title"] as! String).range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        
+        photoMainTableView.reloadData()
+    }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        self.searchBar(searchBar, textDidChange: "")
+    }
 
 }
 
