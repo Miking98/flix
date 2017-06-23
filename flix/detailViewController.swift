@@ -47,8 +47,8 @@ class detailViewController: UIViewController {
             let backdropImageRequest = URLRequest(url: backdropURL)
             let posterImageRequest = URLRequest(url: posterURL)
             
-            splashImageView.af_setImage(withURLRequest: backdropImageRequest, imageTransition: .crossDissolve(0.8), runImageTransitionIfCached: true)
-            thumbnailImageView.af_setImage(withURLRequest: posterImageRequest, runImageTransitionIfCached: true)
+            splashImageView.af_setImage(withURLRequest: backdropImageRequest, imageTransition: .crossDissolve(0.8), runImageTransitionIfCached: false)
+            thumbnailImageView.af_setImage(withURLRequest: posterImageRequest, runImageTransitionIfCached: false)
         }
     }
 
