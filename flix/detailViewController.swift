@@ -39,15 +39,16 @@ class detailViewController: UIViewController {
             dateLabel.text = movie[MovieKeys.date] as? String
             descriptionTextView.text = movie[MovieKeys.description] as? String
             ratingLabel.text = String(format: "%.1f", movie[MovieKeys.rating] as! Double)
-            let backdropPath = movie[MovieKeys.backdropPath] as? String
-            let posterPath = movie[MovieKeys.posterPath] as? String
-            let backdropFullPath = baseImageURL + "w500" + backdropPath!
-            let posterFullPath = baseImageURL  + "w500" + posterPath!
+            let backdropFullPath = baseImageURL + "w500" + (movie[MovieKeys.backdropPath] as! String)
+            let posterFullPath = baseImageURL  + "w500" + (movie[MovieKeys.posterPath] as! String)
             let backdropURL = URL(string: ViewController().generateURL(apiURL: backdropFullPath))!
             let posterURL = URL(string: ViewController().generateURL(apiURL: posterFullPath))!
             
-            splashImageView.af_setImage(withURL: backdropURL)
-            thumbnailImageView.af_setImage(withURL: posterURL)
+            let backdropImageRequest = URLRequest(url: backdropURL)
+            let posterImageRequest = URLRequest(url: posterURL)
+            
+            splashImageView.af_setImage(withURLRequest: backdropImageRequest, imageTransition: .crossDissolve(0.8), runImageTransitionIfCached: true)
+            thumbnailImageView.af_setImage(withURLRequest: posterImageRequest, runImageTransitionIfCached: true)
         }
     }
 
@@ -58,7 +59,7 @@ class detailViewController: UIViewController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! trailerViewController
+        let vc = segue.destination as! trailerViewController
         
         vc.movie = movie
     }
