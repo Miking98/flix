@@ -11,6 +11,7 @@
 		927B4C891EFB388F0064D074 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927B4C881EFB388F0064D074 /* detailViewController.swift */; };
 		927B4C8E1EFB4D630064D074 /* collectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927B4C8D1EFB4D630064D074 /* collectionViewController.swift */; };
 		92A7855E1EFC7E5600810A52 /* SuperheroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A7855D1EFC7E5600810A52 /* SuperheroCell.swift */; };
+		92A785601EFC933F00810A52 /* trailerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A7855F1EFC933F00810A52 /* trailerViewController.swift */; };
 		92EE6EFB1EFB0FF5003B7222 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EE6EFA1EFB0FF5003B7222 /* AppDelegate.swift */; };
 		92EE6EFD1EFB0FF5003B7222 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EE6EFC1EFB0FF5003B7222 /* ViewController.swift */; };
 		92EE6F001EFB0FF5003B7222 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92EE6EFE1EFB0FF5003B7222 /* Main.storyboard */; };
@@ -48,6 +49,8 @@
 		927B4C881EFB388F0064D074 /* detailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		927B4C8D1EFB4D630064D074 /* collectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collectionViewController.swift; sourceTree = "<group>"; };
 		92A7855D1EFC7E5600810A52 /* SuperheroCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperheroCell.swift; sourceTree = "<group>"; };
+		92A7855F1EFC933F00810A52 /* trailerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = trailerViewController.swift; sourceTree = "<group>"; };
+		92D9A1B21EFC992B006B454C /* flix-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flix-Bridging-Header.h"; sourceTree = "<group>"; };
 		92EE6EF71EFB0FF5003B7222 /* flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92EE6EFA1EFB0FF5003B7222 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92EE6EFC1EFB0FF5003B7222 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +116,7 @@
 				92EE6EFC1EFB0FF5003B7222 /* ViewController.swift */,
 				927B4C881EFB388F0064D074 /* detailViewController.swift */,
 				927B4C8D1EFB4D630064D074 /* collectionViewController.swift */,
+				92A7855F1EFC933F00810A52 /* trailerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -158,6 +162,7 @@
 				92EE6F011EFB0FF5003B7222 /* Assets.xcassets */,
 				92EE6F031EFB0FF5003B7222 /* LaunchScreen.storyboard */,
 				92EE6F061EFB0FF5003B7222 /* Info.plist */,
+				92D9A1B21EFC992B006B454C /* flix-Bridging-Header.h */,
 			);
 			path = flix;
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A785601EFC933F00810A52 /* trailerViewController.swift in Sources */,
 				92EE6EFD1EFB0FF5003B7222 /* ViewController.swift in Sources */,
 				927B4C8E1EFB4D630064D074 /* collectionViewController.swift in Sources */,
 				92EE6EFB1EFB0FF5003B7222 /* AppDelegate.swift in Sources */,
@@ -636,6 +642,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miking98.flix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "flix/flix-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -649,6 +656,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miking98.flix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "flix/flix-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
