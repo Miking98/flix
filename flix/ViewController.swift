@@ -136,7 +136,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.descriptionLabel.text = description
         if baseImageURL != "" {
             let fullImageURL = URL(string: baseImageURL + "w500" + imageURL)!
-            cell.photoImageView.af_setImage(withURL: fullImageURL)
+            let fullImageRequest = URLRequest(url: fullImageURL)
+            cell.photoImageView.af_setImage(withURLRequest: fullImageRequest, imageTransition: .crossDissolve(0.8), runImageTransitionIfCached: true)
         }
         
         return cell
