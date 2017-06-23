@@ -143,7 +143,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if baseImageURL != "" {
             let fullImageURL = URL(string: baseImageURL + "w500" + imageURL)!
             let fullImageRequest = URLRequest(url: fullImageURL)
-            cell.photoImageView.af_setImage(withURLRequest: fullImageRequest, imageTransition: .crossDissolve(0.8), runImageTransitionIfCached: false)
+            cell.photoImageView.af_setImage(withURLRequest: fullImageRequest, placeholderImage: #imageLiteral(resourceName: "movie_poster_placeholder"), imageTransition: .crossDissolve(0.8), runImageTransitionIfCached: false)
         }
         
         return cell
