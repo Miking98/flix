@@ -2,7 +2,7 @@
 
 **Flix** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **X** hours spent in total
+Time spent: **15** hours spent in total
 
 ## User Stories
 
@@ -17,7 +17,7 @@ The following **optional** features are implemented:
 
 - [ X ] User sees an error message when there's a networking error.
 - [ X ] Movies are displayed using a CollectionView instead of a TableView.
-- [ ] User can search for a movie.
+- [ X ] User can search for a movie.
 - [ X ] All images fade in as they are loading.
 - [ X ] User can view the large movie poster by tapping on a cell.
 - [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
@@ -28,15 +28,14 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [ X ] Added a Trailer View so that a Youtube video modal loads when the user clicks the movie poster thumbnail in the Detail View
+- [ X ] Placeholder image displayed while images load on home screen
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. What customizations for the UI people thought of
+2. Abstracting away large chunks of code that didn't really change between view controllers (e.g. the repetitive network requests)
 
 ## Video Walkthrough
-
-Here's a walkthrough of implemented user stories:
 
 <img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
