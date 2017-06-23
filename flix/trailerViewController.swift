@@ -23,6 +23,7 @@ class trailerViewController: UIViewController {
         super.viewDidLoad()
 
         if let movie = movie {
+            self.infoLabel.text = "Trailer for "+(movie["title"] as! String)
             self.spinnerActivityIndicatorView.startAnimating()
             let videoURL = baseVideoInfoURL.replacingOccurrences(of: "{movie_id}", with: String(format: "%d", movie["id"] as! Int))
             let url = URL(string: ViewController().generateURL(apiURL: videoURL, page: 1))!
@@ -44,7 +45,6 @@ class trailerViewController: UIViewController {
                         let trailerURL = URL(string: self.baseYoutubeURL + trailerYoutubeID)!
                         let request = URLRequest(url: trailerURL)
                         self.trailerWebView.loadRequest(request)
-                        self.infoLabel.text = "Trailer for "+(movie["title"] as! String)
                     }
                 }
                 self.spinnerActivityIndicatorView.stopAnimating()
