@@ -23,12 +23,13 @@ The following **optional** features are implemented:
 - [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
 - [ ] Customize the selection effect of the cell.
 - [ ] Customize the navigation bar.
-- [ ] Customize the UI.
+- [ X ] Customize the UI.
 
 The following **additional** features are implemented:
 
 - [ X ] Added a Trailer View so that a Youtube video modal loads when the user clicks the movie poster thumbnail in the Detail View
 - [ X ] Placeholder image displayed while images load on home screen
+- [ X ] Scrolling description in Detail View for when a movie's overview overflows its UITextBox container
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
