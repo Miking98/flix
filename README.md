@@ -44,7 +44,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Spent a lot of time trying to get the official Youtube iOS Cocoapod to work, managed to get xCOde to recognize the YTPlayer class by adding a Bridging file, but couldn't get the video to load in the actual UIView element.
+Spent a lot of time trying to get the official Youtube iOS Cocoapod (youtube-ios-player-helper) to work, managed to get xCOde to recognize the YTPlayer class by adding a Bridging file, but couldn't get the video to load in the actual UIView element.
 
 ## Credits
 
