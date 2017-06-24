@@ -38,7 +38,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 ## Video Walkthrough
 
-<img src='http://imgur.com/download/21hMpd9' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/21hMpd9.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
